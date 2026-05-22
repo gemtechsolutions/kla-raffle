@@ -14,8 +14,7 @@
   --border: rgba(255, 255, 255, 0.18);
   --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.45);
 
-  --sans:
-    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --khmer: 'Noto Sans Khmer', 'Khmer OS', var(--sans);
 
   font-family: var(--sans);

@@ -2,11 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import scoopyImg from './assets/scoopy.png'
 import iphoneImg from './assets/iphone17.webp'
 import telegramQR from './assets/telegram.jpg'
-import {
-  ENTRY_PRICE_USD,
-  getNextDrawDate,
-  latestResult,
-} from './raffleConfig'
+import { ENTRY_PRICE_USD, getNextDrawDate, latestResult } from './raffleConfig'
 import './App.css'
 
 const KHMER_DIGITS = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'] as const
@@ -172,13 +168,7 @@ function Prizes() {
   )
 }
 
-function NumberSlot({
-  value,
-  revealed,
-}: {
-  value: number | null
-  revealed: boolean
-}) {
+function NumberSlot({ value, revealed }: { value: number | null; revealed: boolean }) {
   return (
     <div className={`number-slot ${revealed ? 'revealed' : 'hidden'}`}>
       {revealed && value !== null ? (
@@ -193,9 +183,7 @@ function NumberSlot({
 }
 
 function WinningNumbers({ numbers }: { numbers: number[] | null }) {
-  const slots = Array.from({ length: 5 }, (_, i) =>
-    numbers ? (numbers[i] ?? null) : null,
-  )
+  const slots = Array.from({ length: 5 }, (_, i) => (numbers ? (numbers[i] ?? null) : null))
   const revealed = numbers !== null
 
   return (
@@ -230,9 +218,7 @@ function HowToEnter() {
         <li>
           <span className="step-num">{toKhmerDigits(1)}</span>
           <div>
-            <p className="km">
-              បង់ត្រឹមតែ {toKhmerDigits(ENTRY_PRICE_USD)} ដុល្លារដើម្បីចូលរួម
-            </p>
+            <p className="km">បង់ត្រឹមតែ {toKhmerDigits(ENTRY_PRICE_USD)} ដុល្លារដើម្បីចូលរួម</p>
             <p className="en">Pay just ${ENTRY_PRICE_USD} to enter</p>
           </div>
         </li>
@@ -247,8 +233,8 @@ function HowToEnter() {
           <span className="step-num">{toKhmerDigits(3)}</span>
           <div>
             <p className="km">
-              ជ្រើសរើសលេខ {toKhmerDigits(5)} ពី {toKhmerDigits(1)} ដល់{' '}
-              {toKhmerDigits(99)} ហើយផ្ញើមកយើង
+              ជ្រើសរើសលេខ {toKhmerDigits(5)} ពី {toKhmerDigits(1)} ដល់ {toKhmerDigits(99)}{' '}
+              ហើយផ្ញើមកយើង
             </p>
             <p className="en">Pick 5 numbers from 1 to 99 and send them to us</p>
           </div>
@@ -260,12 +246,10 @@ function HowToEnter() {
           <p className="telegram-eyebrow">Telegram</p>
           <p className="telegram-instruction">
             <span className="km">
-              ជ្រើសរើសលេខ {toKhmerDigits(5)} ពី {toKhmerDigits(1)} ដល់{' '}
-              {toKhmerDigits(99)} ហើយផ្ញើមកកាន់ Telegram
+              ជ្រើសរើសលេខ {toKhmerDigits(5)} ពី {toKhmerDigits(1)} ដល់ {toKhmerDigits(99)}{' '}
+              ហើយផ្ញើមកកាន់ Telegram
             </span>
-            <span className="en">
-              Pick 5 numbers from 1 to 99 and send them to Telegram
-            </span>
+            <span className="en">Pick 5 numbers from 1 to 99 and send them to Telegram</span>
           </p>
         </div>
       </div>
@@ -290,9 +274,7 @@ function App() {
             <span className="en">Win a Honda Scoopy</span>
           </h1>
           <p className="hero-sub">
-            <span className="km">
-              តម្លៃត្រឹមតែ {toKhmerDigits(ENTRY_PRICE_USD)} ដុល្លារ
-            </span>
+            <span className="km">តម្លៃត្រឹមតែ {toKhmerDigits(ENTRY_PRICE_USD)} ដុល្លារ</span>
             <span className="en">Only ${ENTRY_PRICE_USD} to enter</span>
           </p>
         </div>
